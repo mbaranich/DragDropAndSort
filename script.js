@@ -3,6 +3,10 @@ const containers = document.querySelectorAll('.container');
 
 draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
-        console.log('drag start')
+        draggable.classList.add('dragging');
     })
-})
+
+    draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('dragging');
+    })
+});
